@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="/css/carousel.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script language="javascript" type="text/javascript" src="/js/carousel.js"></script>
+
+</head>
+  <div class="carousel_controls">
+    <a href="#" id="previous_frame">&lt;</a>
+    <a href="#" id="next_frame">&gt;</a>
+  </div>
+  <div class="carousel">
+  <ul class="frames">
+  <% @photos.each do |photo| %>
+    <% if photo == @photos[0] %>
+      <li id="active">
+      <img src=<%= photo.file.url %>>
+      </li>
+    <% else %>
+      <li>
+      <img src=<%= photo.file.url %>>
+      </li>
+    <% end %>
+  <% end %>
+  </ul>
+</div>
+
+
+</html>
